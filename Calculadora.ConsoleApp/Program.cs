@@ -15,6 +15,7 @@
                 Console.WriteLine("2 - Subtrair");
                 Console.WriteLine("3 - Multiplicação");
                 Console.WriteLine("4 - Divisão");
+                Console.WriteLine("5 - Tabuada");
                 Console.WriteLine("S - Sair");
 
                 Console.WriteLine();
@@ -24,6 +25,27 @@
 
                 if (opcao == "S")
                     break;
+
+                else if (opcao == "5")
+                {
+                    Console.WriteLine("--------------------------------");
+                    Console.WriteLine("Tabuada");
+                    Console.WriteLine("--------------------------------");
+
+                    Console.Write("Digite o número: ");
+                    int numeroTabuada = Convert.ToInt32(Console.ReadLine());
+
+                    for (int contador = 1; contador <= 10; contador++)
+                    {
+                        int resultadoTabuada = numeroTabuada * contador;
+
+                        Console.WriteLine($"{numeroTabuada} x {contador} = {resultadoTabuada}");
+                    }
+
+                    Console.ReadLine();
+
+                    continue;
+                }
 
                 Console.Write("Digite o primeiro número: ");
                 string primeiroNumeroString = Console.ReadLine();
