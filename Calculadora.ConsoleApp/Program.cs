@@ -13,6 +13,8 @@
 
                 Console.WriteLine("1 - Somar");
                 Console.WriteLine("2 - Subtrair");
+                Console.WriteLine("3 - Multiplicação");
+                Console.WriteLine("4 - Divisão");
                 Console.WriteLine("S - Sair");
 
                 Console.WriteLine();
@@ -21,41 +23,39 @@
                 string opcao = Console.ReadLine().ToUpper();
 
                 if (opcao == "S")
-                {
                     break;
-                }
 
                 Console.Write("Digite o primeiro número: ");
                 string primeiroNumeroString = Console.ReadLine();
-                int primeiroNumero = Convert.ToInt32(primeiroNumeroString);
+                decimal primeiroNumero = Convert.ToDecimal(primeiroNumeroString);
 
                 Console.Write("Digite o segundo número: ");
                 string segundoNumeroString = Console.ReadLine();
-                int segundoNumero = Convert.ToInt32(segundoNumeroString);
+                decimal segundoNumero = Convert.ToDecimal(segundoNumeroString);
 
-                int resultado = 0;
+                decimal resultado = 0;
 
                 if (opcao == "1")
-                {
                     resultado = primeiroNumero + segundoNumero;
-                }
-                else
-                {
-                    resultado = primeiroNumero - segundoNumero;
-                }
 
+                else if (opcao == "2")
+                    resultado = primeiroNumero - segundoNumero;
+
+                else if (opcao == "3")
+                    resultado = primeiroNumero * segundoNumero;
+
+                else if (opcao == "4")
+                    resultado = primeiroNumero / segundoNumero;
 
                 Console.WriteLine("--------------------------------");
-                Console.WriteLine("Resultado: " + resultado);
+                Console.WriteLine("Resultado: " + resultado.ToString("F2"));
                 Console.WriteLine("--------------------------------");
 
                 Console.Write("Deseja continuar? (S/N): ");
                 string opcaoContinuar = Console.ReadLine().ToUpper();
 
                 if (opcaoContinuar != "S")
-                {
                     break;
-                }
 
                 Console.ReadLine();
             }
