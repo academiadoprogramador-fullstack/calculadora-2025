@@ -45,7 +45,16 @@
                     resultado = primeiroNumero * segundoNumero;
 
                 else if (opcao == "4")
+                {
+                    while (segundoNumero == 0)
+                    {
+                        Console.Write("Não é possível dividir por 0\n Digite o segundo número novamente -> ");
+
+                        segundoNumero = Convert.ToDecimal(Console.ReadLine());
+                    }
+                    
                     resultado = primeiroNumero / segundoNumero;
+                }
 
                 Console.WriteLine("--------------------------------");
                 Console.WriteLine("Resultado: " + resultado.ToString("F2"));
