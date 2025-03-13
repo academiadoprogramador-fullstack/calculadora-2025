@@ -9,27 +9,14 @@
 
             while (true)
             {
-                Console.Clear();
-                Console.WriteLine("--------------------------------");
-                Console.WriteLine("Calculadora Tabajara 2025");
-                Console.WriteLine("--------------------------------");
+                // exibe o menu e retorna a operação escolhida
+                string opcao = ExibirMenu();
 
-                Console.WriteLine("1 - Somar");
-                Console.WriteLine("2 - Subtrair");
-                Console.WriteLine("3 - Multiplicação");
-                Console.WriteLine("4 - Divisão");
-                Console.WriteLine("5 - Tabuada");
-                Console.WriteLine("6 - Histórico de Operações");
-                Console.WriteLine("S - Sair");
-
-                Console.WriteLine();
-                Console.Write("Escolha uma opção: ");
-
-                string opcao = Console.ReadLine().ToUpper();
-
+                // avalia se o usuário gostaria de sair do programa
                 if (opcao == "S")
                     break;
 
+                // exibe a tabuada de um número
                 else if (opcao == "5")
                 {
                     Console.WriteLine("--------------------------------");
@@ -50,6 +37,8 @@
 
                     continue;
                 }
+
+                // exibe o histórico de operações
                 else if (opcao == "6")
                 {
                     Console.WriteLine("--------------------------------");
@@ -121,6 +110,29 @@
 
                 Console.ReadLine();
             }
+        }
+
+        static string ExibirMenu()
+        {
+            Console.Clear();
+            Console.WriteLine("--------------------------------");
+            Console.WriteLine("Calculadora Tabajara 2025");
+            Console.WriteLine("--------------------------------");
+
+            Console.WriteLine("1 - Somar");
+            Console.WriteLine("2 - Subtrair");
+            Console.WriteLine("3 - Multiplicação");
+            Console.WriteLine("4 - Divisão");
+            Console.WriteLine("5 - Tabuada");
+            Console.WriteLine("6 - Histórico de Operações");
+            Console.WriteLine("S - Sair");
+
+            Console.WriteLine();
+            Console.Write("Escolha uma opção: ");
+
+            string opcao = Console.ReadLine()!.ToUpper();
+
+            return opcao;
         }
     }
 }
