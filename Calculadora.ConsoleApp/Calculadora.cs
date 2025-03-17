@@ -50,6 +50,20 @@ public static class Calculadora
         return resultado;
     }
 
+    public static string[] GerarTabuada(int numeroTabuada)
+    {
+        string[] linhasTabuada = new string[10];
+
+        for (int contador = 1; contador <= 10; contador++)
+        {
+            int resultadoTabuada = numeroTabuada * contador;
+
+            linhasTabuada[contador - 1] = $"{numeroTabuada} x {contador} = {resultadoTabuada}";
+        }
+
+        return linhasTabuada;
+    }
+
     public static string[] ObterHistoricoDeOperacoes()
     {
         return historicoOperacoes;
