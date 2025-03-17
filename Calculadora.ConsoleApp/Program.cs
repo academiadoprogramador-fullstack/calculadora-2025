@@ -2,9 +2,6 @@
 
 internal class Program
 {
-    static string[] historicoOperacoes = new string[100];
-    static int contadorHistorico = 0;
-
     static void Main(string[] args)
     {
         while (true)
@@ -96,6 +93,8 @@ internal class Program
         Console.WriteLine("Histórico de Operações");
         Console.WriteLine("--------------------------------");
 
+        string[] historicoOperacoes = Calculadora.ObterHistoricoDeOperacoes();
+
         for (int contador = 0; contador < historicoOperacoes.Length; contador++)
         {
             string valorAtual = historicoOperacoes[contador];
@@ -120,20 +119,14 @@ internal class Program
         decimal resultado = 0;
 
         if (operacao == "1")
-        {
             resultado = Calculadora.Somar(primeiroNumero, segundoNumero);
-            historicoOperacoes[contadorHistorico] = $"{primeiroNumero} + {segundoNumero} = {resultado}";
-        }
+
         else if (operacao == "2")
-        {
             resultado = Calculadora.Subtrair(primeiroNumero, segundoNumero);
-            historicoOperacoes[contadorHistorico] = $"{primeiroNumero} - {segundoNumero} = {resultado}";
-        }
+
         else if (operacao == "3")
-        {
             resultado = Calculadora.Multiplicar(primeiroNumero, segundoNumero);
-            historicoOperacoes[contadorHistorico] = $"{primeiroNumero} * {segundoNumero} = {resultado}";
-        }
+
         else if (operacao == "4")
         {
             while (segundoNumero == 0)
@@ -144,10 +137,7 @@ internal class Program
             }
 
             resultado = Calculadora.Dividir(primeiroNumero, segundoNumero);
-            historicoOperacoes[contadorHistorico] = $"{primeiroNumero} / {segundoNumero} = {resultado}";
         }
-
-        contadorHistorico += 1;
 
         return resultado;
     }
